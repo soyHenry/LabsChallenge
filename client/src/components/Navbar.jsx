@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Navbar() {
+function Navbar({getProductsResults}) {
 
     const [search, setSearch]= useState('');
 
@@ -13,13 +13,13 @@ function Navbar() {
         fetch(`http://localhost:4000/api/search?search=${search}`)
             .then(res => res.json())
             .then((resultados) => {
-                console.log(resultados)
+                getProductsResults(resultados)
             })
     }
     
     return (
         <nav className="navbar navbar-dark bg-dark">
-            <a className="navbar-brand" href="#">SmartStore</a>
+            <span className="navbar-brand">APIStore</span>
             <form className="form-inline" onSubmit={handleSubmit}>
                 <input
                     className="form-control mr-sm-2"
