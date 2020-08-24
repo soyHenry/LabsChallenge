@@ -10,7 +10,7 @@ function Navbar() {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:4000/api/search?value=${search}`)
+        fetch(`http://localhost:4000/api/search?search=${search}`)
             .then(res => res.json())
             .then((resultados) => {
                 console.log(resultados)
