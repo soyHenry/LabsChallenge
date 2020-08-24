@@ -1,8 +1,8 @@
-const { Router } = require('express')
-const router = Router();
+const { Router } = require('express');
+// Import routes
+const searchRouter = require('./search.js');
 
-router.get('/', (req, res) => {
-    res.json({"Title": "Hello Wordl Exportado"});
-});
+const router = Router();
+router.use('/search', searchRouter)
 
 module.exports = router;

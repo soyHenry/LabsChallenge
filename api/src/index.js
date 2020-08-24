@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const routes = require('./routes/index')
 
 // settings
 app.set('port', process.env.PORT || 4000)
@@ -12,8 +13,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json());
 
 // routes
-app.use(require('./routes/index'));
-app.use(require('./routes/phones'));
+app.use('/api', routes);
 
 // starting the server
 app.listen(app.get('port'), () => {
