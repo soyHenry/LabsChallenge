@@ -2,8 +2,8 @@ import React from 'react';
 
 const styleCard = {
     maxWidth: "570px", 
-    maxHeigth: "350px",
-    boxShadow: "6px 6px rgba(0,0,0,0.3)"
+    maxHeigth: "450px",
+    minHeigth: "400px"
 }
 
 function ProductCard(props) {
@@ -12,7 +12,7 @@ function ProductCard(props) {
 
     return (
         <div className="col mb-4 mt-4">
-            <div className="card mb-3 text-white bg-dark" style={styleCard}>
+            <div className="card mb-3 text-white bg-dark shadow-lg border-0" style={styleCard}>
                 <div className="row no-gutters">
                     <div className="col-md-4">
                         <img className="card-img" src={thumbnail} alt="" />
